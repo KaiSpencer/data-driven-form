@@ -1,44 +1,89 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import "./App.scss";
+import { Button, Container, Header } from "nhsuk-react-components";
+import { Form, Schema } from "./Components/Form/Form";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
 
+const testSchema: Schema = {
+  title: "My first form",
+  pages: [
+    {
+      title: "Page 1",
+      path: "page-1",
+      nextPath: "/page-2",
+      backlink: undefined,
+      components: [
+        {
+          id: "hereAreSomeRadios",
+          type: "Radios",
+          title: "Here are some Radios",
+          options: [
+            { displayText: "Option 1", id: "1" },
+            { displayText: "Option 2", id: "2" },
+            { displayText: "Option 3", id: "3" },
+            { displayText: "Option 4", id: "4" },
+            { displayText: "Option 5", id: "5" },
+            { displayText: "Option 6", id: "6" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Page 2",
+      path: "page-2",
+      nextPath: undefined,
+      backlink: { displayText: "Back to page 1", route: "/page-1" },
+      components: [
+        {
+          id: "hereAreSomeCheckboxes",
+          type: "Checkbox",
+          title: "Here are some Checkboxes",
+          hint: "You can have hints too",
+          options: [
+            { displayText: "Checkbox ", id: "1" },
+            { displayText: "Disabled by default", id: "2" },
+            { displayText: "Checked by default", id: "3" },
+          ],
+        },
+      ],
+    },
+  ],
+};
 function App() {
-  const [count, setCount] = useState(0);
-
+  const history = useHistory();
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type='button' onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <>
+      <Header>
+        <Header.Container>
+          <Header.Logo href='/' />
+          <Header.ServiceName>Data Driven Form</Header.ServiceName>
+          <Header.Content>
+            <Header.MenuToggle />
+          </Header.Content>
+        </Header.Container>
+      </Header>
+      <Container>
+        <Switch>
+          <Route path='/:pagePath'>
+            <Form schema={testSchema} />
+          </Route>
+          <Route path='/'>
+            <Button
+              onClick={() => {
+                history.push(testSchema.pages[0].path);
+              }}
+            >
+              Go to form
+            </Button>
+          </Route>
+        </Switch>
+      </Container>
+    </>
   );
 }
 
