@@ -7,7 +7,7 @@ export const testSchema: Schema = {
       title: "Page 1",
       path: "page-1",
       nextPath: "/page-2",
-      backlink: undefined,
+      backlink: { displayText: "Back to home", route: "/" },
       components: [
         {
           id: "hereAreSomeRadios",

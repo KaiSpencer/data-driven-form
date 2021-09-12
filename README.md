@@ -24,6 +24,8 @@ Runs at `localhost:3000`
 
 # Usage
 
+See the [interactive demo](https://kaispencer.github.io/data-driven-form/) for an example with an editable schema.
+
 ## Schema
 
 Example schema at `src/EXAMPLE_SCHEMA.ts`
