@@ -1,32 +1,10 @@
 import { BackLink, Button } from "nhsuk-react-components";
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import { Schema } from "../../types";
 import Checkboxes, { ICheckboxes } from "../Input/Checkboxes/Checkboxes";
 import Radios, { IRadios } from "../Input/Radios/Radios";
 
-type ComponentTypes = "Radios" | "Checkbox";
-export interface Component {
-  id: string;
-  type: ComponentTypes;
-  title: string;
-  hint?: string;
-}
-interface IBacklink {
-  displayText: string;
-  route: string;
-}
-type Components = ICheckboxes[] | IRadios[];
-interface Page {
-  title: string;
-  components: Components;
-  path: string;
-  nextPath: string | undefined;
-  backlink: IBacklink | undefined;
-}
-export interface Schema {
-  title: string;
-  pages: Page[];
-}
 interface FormProps {
   schema: Schema;
 }

@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from "react";
-import { Component } from "../../Form/Form";
 import { Hint, Radios as LibRadios } from "nhsuk-react-components";
+import { Component } from "../../../types";
 
 interface IRadioOption {
   displayText: string;

@@ -1,7 +1,7 @@
 import { Hint } from "nhsuk-react-components";
 import React, { SyntheticEvent } from "react";
-import { Component } from "../../Form/Form";
 import { Checkboxes as LibCheckboxes } from "nhsuk-react-components";
+import { Component } from "../../../types";
 
 interface ICheckboxesOption {
   displayText: string;
