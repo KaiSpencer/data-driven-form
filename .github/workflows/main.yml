@@ -24,11 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Run a multi-line script
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
         run: |
           # actions bot setup 
