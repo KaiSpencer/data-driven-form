@@ -1,4 +1,4 @@
-import { Schema } from "./Components/Form/Form";
+import { Schema } from "./types";
 
 export const testSchema: Schema = {
   title: "My first form",

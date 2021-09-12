@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { Button, Container, Header } from "nhsuk-react-components";
-import { Form, Schema } from "./Components/Form/Form";
+import { Form } from "./Components/Form/Form";
 import {
   BrowserRouter as Router,
   Route,
