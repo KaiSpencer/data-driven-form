@@ -25,15 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
       - name: Run a multi-line script
 
         run: |
           # actions bot setup 
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.email "kaispencer98@gmail.com"
+          git config --global user.name "KaiSpencer"
 
           # install deps
           yarn
