@@ -22,13 +22,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
-
       - name: Run a multi-line script
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
         run: |
           # actions bot setup 
           git config --global user.email "action@github.com"
