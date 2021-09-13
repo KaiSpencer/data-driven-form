@@ -28,7 +28,7 @@ const Radios: React.FC<IRadiosProps> = ({
   };
   return (
     <>
-      <h1>{component.title}</h1>
+      {component.title && <h2>{component.title}</h2>}
       {component.hint && <Hint>{component.hint}</Hint>}
       <LibRadios onChange={handleRadioChange}>
         {component.options.map((option) => {

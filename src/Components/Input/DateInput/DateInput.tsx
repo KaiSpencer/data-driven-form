@@ -30,7 +30,7 @@ const DateInput: React.FC<IDateInputProps> = ({
   };
   return (
     <>
-      <h3>{component.title}</h3>
+      {component.title && <h2>{component.title}</h2>}
       <LibDateInput hint={component.hint || ""} onChange={handleChange} />
     </>
   );

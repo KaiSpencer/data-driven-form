@@ -5,6 +5,7 @@ import { FormChoices, Schema } from "../../types";
 import Checkboxes, { ICheckboxes } from "../Input/Checkboxes/Checkboxes";
 import DateInput, { IDateInput } from "../Input/DateInput/DateInput";
 import Radios, { IRadios } from "../Input/Radios/Radios";
+import Input, { IInput } from "../Input/Input/Input";
 
 interface FormProps {
   schema: Schema;
@@ -33,6 +34,7 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
           {page.backlink.displayText}
         </BackLink>
       )}
+      <h1>{page.title}</h1>
       {page.components.map((component) => {
         switch (component.type) {
           case "Radios":
@@ -61,6 +63,14 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
                 formChoices={formChoices}
                 setFormChoices={setFormChoices}
                 key={component.id}
+              />
+            );
+          case "Input":
+            return (
+              <Input
+                component={component as IInput}
+                formChoices={formChoices}
+                setFormChoices={setFormChoices}
               />
             );
         }

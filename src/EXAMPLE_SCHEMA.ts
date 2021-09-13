@@ -46,7 +46,7 @@ export const testSchema: Schema = {
     {
       title: "Page 3",
       path: "page-3",
-      nextPath: undefined,
+      nextPath: "page-4",
       backlink: { displayText: "Back to page 2", route: "/page-2" },
       components: [
         {
@@ -55,6 +55,33 @@ export const testSchema: Schema = {
           title: "Here is a DateInput",
           hint: "With a hint",
           options: [],
+        },
+        {
+          id: "hereAreSomeCheckboxes2",
+          type: "DateInput",
+          hint: "Title is optional",
+          options: [],
+        },
+      ],
+    },
+    {
+      title: "Page 4",
+      path: "page-4",
+      nextPath: undefined,
+      backlink: { displayText: "Back to page 3", route: "/page-3" },
+      components: [
+        {
+          id: "input",
+          type: "Input",
+          title: "Here is an Input",
+          hint: "And a hint",
+          label: "With a label",
+        },
+        {
+          id: "input2",
+          type: "Input",
+          hint: "And a hint",
+          label: "Another input",
         },
       ],
     },

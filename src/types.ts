@@ -2,6 +2,7 @@ import { ICheckboxes } from "./Components/Input/Checkboxes/Checkboxes";
 import { IDateInput } from "./Components/Input/DateInput/DateInput";
 import { IDateInputOnChangeValue } from "./Components/Input/DateInput/types";
 import { IRadios } from "./Components/Input/Radios/Radios";
+import { IInput } from "./Components/Input/Input/Input";
 
 export interface Schema {
   title: string;
@@ -21,13 +22,13 @@ interface IBacklink {
   route: string;
 }
 
-type Components = ICheckboxes[] | IRadios[] | IDateInput[];
-type ComponentTypes = "Radios" | "Checkbox" | "DateInput";
+type Components = ICheckboxes[] | IRadios[] | IDateInput[] | IInput[];
+type ComponentTypes = "Radios" | "Checkbox" | "DateInput" | "Input";
 
 export interface Component {
   id: string;
   type: ComponentTypes;
-  title: string;
+  title?: string;
   hint?: string;
 }
 

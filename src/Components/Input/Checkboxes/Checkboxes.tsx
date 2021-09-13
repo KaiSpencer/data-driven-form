@@ -33,7 +33,7 @@ const Checkboxes: React.FC<ICheckboxesProps> = ({
   };
   return (
     <>
-      <h3>{component.title}</h3>{" "}
+      {component.title && <h2>{component.title}</h2>}
       {component.hint && <Hint>{component.hint}</Hint>}
       <LibCheckboxes onChange={handleCheckboxChange}>
         {component.options.map((option) => {
