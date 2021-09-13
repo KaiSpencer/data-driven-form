@@ -4,6 +4,8 @@ React implementation of a form driven by a data schema.
 
 Uses [NHSUK React Component](https://github.com/NHSDigital/nhsuk-react-components) library
 
+See the [interactive demo](https://kaispencer.github.io/data-driven-form/) for an example with an editable schema.
+
 # Setup
 
 ## Prerequisites
@@ -23,8 +25,6 @@ Runs at `localhost:3000`
 `yarn dev`
 
 # Usage
-
-See the [interactive demo](https://kaispencer.github.io/data-driven-form/) for an example with an editable schema.
 
 ## Schema
 

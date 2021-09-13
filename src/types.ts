@@ -1,4 +1,6 @@
 import { ICheckboxes } from "./Components/Input/Checkboxes/Checkboxes";
+import { IDateInput } from "./Components/Input/DateInput/DateInput";
+import { IDateInputOnChangeValue } from "./Components/Input/DateInput/types";
 import { IRadios } from "./Components/Input/Radios/Radios";
 
 export interface Schema {
@@ -14,18 +16,21 @@ interface Page {
   backlink: IBacklink | undefined;
 }
 
-type Components = ICheckboxes[] | IRadios[];
-
 interface IBacklink {
   displayText: string;
   route: string;
 }
 
-type ComponentTypes = "Radios" | "Checkbox";
+type Components = ICheckboxes[] | IRadios[] | IDateInput[];
+type ComponentTypes = "Radios" | "Checkbox" | "DateInput";
 
 export interface Component {
   id: string;
   type: ComponentTypes;
   title: string;
   hint?: string;
+}
+
+export interface FormChoices {
+  [key: string]: string | boolean | IDateInputOnChangeValue;
 }

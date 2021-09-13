@@ -1,7 +1,7 @@
 import { Hint } from "nhsuk-react-components";
 import React, { SyntheticEvent } from "react";
 import { Checkboxes as LibCheckboxes } from "nhsuk-react-components";
-import { Component } from "../../../types";
+import { Component, FormChoices } from "../../../types";
 
 interface ICheckboxesOption {
   displayText: string;
@@ -14,14 +14,8 @@ export interface ICheckboxes extends Component {
 }
 interface ICheckboxesProps {
   component: ICheckboxes;
-  formChoices: {
-    [key: string]: string | boolean;
-  };
-  setFormChoices: React.Dispatch<
-    React.SetStateAction<{
-      [key: string]: string | boolean;
-    }>
-  >;
+  formChoices: FormChoices;
+  setFormChoices: React.Dispatch<React.SetStateAction<FormChoices>>;
 }
 const Checkboxes: React.FC<ICheckboxesProps> = ({
   component,

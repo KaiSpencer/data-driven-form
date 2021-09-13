@@ -1,17 +1,16 @@
 import { BackLink, Button } from "nhsuk-react-components";
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import { Schema } from "../../types";
+import { FormChoices, Schema } from "../../types";
 import Checkboxes, { ICheckboxes } from "../Input/Checkboxes/Checkboxes";
+import DateInput, { IDateInput } from "../Input/DateInput/DateInput";
 import Radios, { IRadios } from "../Input/Radios/Radios";
 
 interface FormProps {
   schema: Schema;
 }
 export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
-  const [formChoices, setFormChoices] = useState<{
-    [key: string]: string | boolean;
-  }>({});
+  const [formChoices, setFormChoices] = useState<FormChoices>({});
 
   const history = useHistory();
   const { pagePath } = useParams<{ pagePath: string }>();
@@ -50,6 +49,15 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
             return (
               <Checkboxes
                 component={component as ICheckboxes}
+                formChoices={formChoices}
+                setFormChoices={setFormChoices}
+                key={component.id}
+              />
+            );
+          case "DateInput":
+            return (
+              <DateInput
+                component={component as IDateInput}
                 formChoices={formChoices}
                 setFormChoices={setFormChoices}
                 key={component.id}

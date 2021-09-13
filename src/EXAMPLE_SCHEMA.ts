@@ -27,7 +27,7 @@ export const testSchema: Schema = {
     {
       title: "Page 2",
       path: "page-2",
-      nextPath: undefined,
+      nextPath: "page-3",
       backlink: { displayText: "Back to page 1", route: "/page-1" },
       components: [
         {
@@ -40,6 +40,21 @@ export const testSchema: Schema = {
             { displayText: "Disabled by default", id: "2" },
             { displayText: "Checked by default", id: "3" },
           ],
+        },
+      ],
+    },
+    {
+      title: "Page 3",
+      path: "page-3",
+      nextPath: undefined,
+      backlink: { displayText: "Back to page 2", route: "/page-2" },
+      components: [
+        {
+          id: "hereAreSomeCheckboxes",
+          type: "DateInput",
+          title: "Here is a DateInput",
+          hint: "With a hint",
+          options: [],
         },
       ],
     },

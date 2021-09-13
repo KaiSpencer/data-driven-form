@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from "react";
 import { Hint, Radios as LibRadios } from "nhsuk-react-components";
-import { Component } from "../../../types";
+import { Component, FormChoices } from "../../../types";
 
 interface IRadioOption {
   displayText: string;
@@ -12,14 +12,8 @@ export interface IRadios extends Component {
 
 interface IRadiosProps {
   component: IRadios;
-  formChoices: {
-    [key: string]: string | boolean;
-  };
-  setFormChoices: React.Dispatch<
-    React.SetStateAction<{
-      [key: string]: string | boolean;
-    }>
-  >;
+  formChoices: FormChoices;
+  setFormChoices: React.Dispatch<React.SetStateAction<FormChoices>>;
 }
 
 const Radios: React.FC<IRadiosProps> = ({
