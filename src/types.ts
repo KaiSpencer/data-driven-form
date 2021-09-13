@@ -3,6 +3,7 @@ import { IDateInput } from "./Components/Input/DateInput/DateInput";
 import { IDateInputOnChangeValue } from "./Components/Input/DateInput/types";
 import { IRadios } from "./Components/Input/Radios/Radios";
 import { IInput } from "./Components/Input/Input/Input";
+import { ITextArea } from "./Components/Input/TextArea/TextArea";
 
 export interface Schema {
   title: string;
@@ -22,8 +23,19 @@ interface IBacklink {
   route: string;
 }
 
-type Components = ICheckboxes[] | IRadios[] | IDateInput[] | IInput[];
-type ComponentTypes = "Radios" | "Checkbox" | "DateInput" | "Input";
+type Components =
+  | ICheckboxes[]
+  | IRadios[]
+  | IDateInput[]
+  | IInput[]
+  | ITextArea[];
+
+type ComponentTypes =
+  | "Radios"
+  | "Checkbox"
+  | "DateInput"
+  | "Input"
+  | "TextArea";
 
 export interface Component {
   id: string;

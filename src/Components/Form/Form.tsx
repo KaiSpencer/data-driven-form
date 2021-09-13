@@ -6,6 +6,7 @@ import Checkboxes, { ICheckboxes } from "../Input/Checkboxes/Checkboxes";
 import DateInput, { IDateInput } from "../Input/DateInput/DateInput";
 import Radios, { IRadios } from "../Input/Radios/Radios";
 import Input, { IInput } from "../Input/Input/Input";
+import TextArea, { ITextArea } from "../Input/TextArea/TextArea";
 
 interface FormProps {
   schema: Schema;
@@ -69,6 +70,14 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
             return (
               <Input
                 component={component as IInput}
+                formChoices={formChoices}
+                setFormChoices={setFormChoices}
+              />
+            );
+          case "TextArea":
+            return (
+              <TextArea
+                component={component as ITextArea}
                 formChoices={formChoices}
                 setFormChoices={setFormChoices}
               />

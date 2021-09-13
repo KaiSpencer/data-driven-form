@@ -67,7 +67,7 @@ export const testSchema: Schema = {
     {
       title: "Page 4",
       path: "page-4",
-      nextPath: undefined,
+      nextPath: "page-5",
       backlink: { displayText: "Back to page 3", route: "/page-3" },
       components: [
         {
@@ -82,6 +82,20 @@ export const testSchema: Schema = {
           type: "Input",
           hint: "And a hint",
           label: "Another input",
+        },
+      ],
+    },
+    {
+      title: "Page 5",
+      path: "page-5",
+      nextPath: undefined,
+      backlink: { displayText: "Back to page 4", route: "/page-4" },
+      components: [
+        {
+          id: "textArea",
+          type: "TextArea",
+          label: "Please input some text.",
+          hint: "Hint goes here",
         },
       ],
     },
