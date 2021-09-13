@@ -1,4 +1,6 @@
-import { Schema } from "./types";
+import { Radios } from "nhsuk-react-components";
+import React from "react";
+import { Component, Schema } from "./types";
 
 export const testSchema: Schema = {
   title: "My first form",
@@ -16,11 +18,13 @@ export const testSchema: Schema = {
           options: [
             { displayText: "Option 1", id: "1" },
             { displayText: "Option 2", id: "2" },
-            { displayText: "Option 3", id: "3" },
-            { displayText: "Option 4", id: "4" },
-            { displayText: "Option 5", id: "5" },
-            { displayText: "Option 6", id: "6" },
           ],
+          overrides: {
+            Radios: {
+              component: Radios,
+              props: { hint: "im a hint" },
+            },
+          },
         },
       ],
     },

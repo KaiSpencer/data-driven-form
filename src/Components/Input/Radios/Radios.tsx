@@ -1,5 +1,5 @@
 import React, { SyntheticEvent } from "react";
-import { Hint, Radios as LibRadios } from "nhsuk-react-components";
+import { Hint as _LibHint, Radios as _LibRadios } from "nhsuk-react-components";
 import { Component, FormChoices } from "../../../types";
 
 interface IRadioOption {
@@ -26,21 +26,45 @@ const Radios: React.FC<IRadiosProps> = ({
     formChoices[component.id] = target.id;
     setFormChoices({ ...formChoices });
   };
+
+  const {
+    Radios: { component: Radios, props: radiosProps },
+    Hint: { component: Hint, props: hintProps },
+  } = getComponents(
+    { Radios: _LibRadios, Hint: _LibHint },
+    component.overrides,
+  );
+
   return (
     <>
       {component.title && <h2>{component.title}</h2>}
-      {component.hint && <Hint>{component.hint}</Hint>}
-      <LibRadios onChange={handleRadioChange}>
+      {component.hint && <Hint {...hintProps}>{component.hint}</Hint>}
+      <Radios onChange={handleRadioChange} {...radiosProps}>
         {component.options.map((option) => {
           return (
-            <LibRadios.Radio id={option.id} key={option.id}>
+            <Radios.Radio id={option.id} key={option.id}>
               {option.displayText}
-            </LibRadios.Radio>
+            </Radios.Radio>
           );
         })}
-      </LibRadios>
+      </Radios>
     </>
   );
 };
 
 export default Radios;
+
+function getComponents<T>(
+  defaultComponents: { [key: string]: React.ComponentType<T> },
+  overrides: any,
+): any {
+  return Object.keys(defaultComponents).reduce((acc, name) => {
+    const override = overrides ? overrides[name] || {} : {};
+
+    (acc as any)[name] = {
+      component: override.component || defaultComponents[name],
+      props: { ...override.props },
+    };
+    return acc;
+  }, {});
+}

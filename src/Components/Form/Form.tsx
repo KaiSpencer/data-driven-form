@@ -72,6 +72,7 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
                 component={component as IInput}
                 formChoices={formChoices}
                 setFormChoices={setFormChoices}
+                key={component.id}
               />
             );
           case "TextArea":
@@ -80,6 +81,7 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
                 component={component as ITextArea}
                 formChoices={formChoices}
                 setFormChoices={setFormChoices}
+                key={component.id}
               />
             );
         }

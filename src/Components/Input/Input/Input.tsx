@@ -5,6 +5,7 @@ import { InputWidth } from "nhsuk-react-components/dist/util/types/NHSUKTypes";
 
 export interface IInput extends Component {
   label: string;
+  randomThing: string;
   width?: InputWidth;
 }
 

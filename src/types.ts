@@ -4,6 +4,7 @@ import { IDateInputOnChangeValue } from "./Components/Input/DateInput/types";
 import { IRadios } from "./Components/Input/Radios/Radios";
 import { IInput } from "./Components/Input/Input/Input";
 import { ITextArea } from "./Components/Input/TextArea/TextArea";
+import React from "react";
 
 export interface Schema {
   title: string;
@@ -42,6 +43,12 @@ export interface Component {
   type: ComponentTypes;
   title?: string;
   hint?: string;
+  overrides?: {
+    [key: string]: {
+      component: React.ReactNode;
+      props?: {};
+    };
+  };
 }
 
 export interface FormChoices {
