@@ -12,7 +12,7 @@ export interface IDateInput extends Component {
   options: IDateInputOption[];
 }
 
-interface IDateInputProps {
+export interface IDateInputProps {
   component: IDateInput;
   formChoices: FormChoices;
   setFormChoices: React.Dispatch<React.SetStateAction<FormChoices>>;

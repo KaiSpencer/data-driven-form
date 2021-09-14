@@ -9,6 +9,9 @@ import Input, { IInput } from "../Input/Input/Input";
 import TextArea, { ITextArea } from "../Input/TextArea/TextArea";
 
 interface FormProps {
+  /**
+   * Data schema
+   */
   schema: Schema;
 }
 export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
@@ -16,6 +19,7 @@ export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
 
   const history = useHistory();
   const { pagePath } = useParams<{ pagePath: string }>();
+  console.log(pagePath);
 
   const page = pages.find((page) => page.path === pagePath);
   if (!page) {
