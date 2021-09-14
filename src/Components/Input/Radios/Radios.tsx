@@ -54,8 +54,8 @@ const Radios: React.FC<IRadiosProps> = ({
 
 export default Radios;
 
-function getComponents<T>(
-  defaultComponents: { [key: string]: React.ComponentType<T> },
+function getComponents(
+  defaultComponents: { [key: string]: React.ComponentType },
   overrides: any,
 ): any {
   return Object.keys(defaultComponents).reduce((acc, name) => {

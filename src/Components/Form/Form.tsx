@@ -8,13 +8,18 @@ import Radios, { IRadios } from "../Input/Radios/Radios";
 import Input, { IInput } from "../Input/Input/Input";
 import TextArea, { ITextArea } from "../Input/TextArea/TextArea";
 
-interface FormProps {
+export interface IFormProps {
   /**
-   * Data schema
+   * Docstring
    */
   schema: Schema;
 }
-export const Form: React.FC<FormProps> = ({ schema: { pages } }) => {
+
+/**
+ *
+ * The form component is the root.
+ */
+export const Form: React.FC<IFormProps> = ({ schema: { pages } }) => {
   const [formChoices, setFormChoices] = useState<FormChoices>({});
 
   const history = useHistory();

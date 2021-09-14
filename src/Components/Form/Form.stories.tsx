@@ -1,6 +1,6 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Form } from "./Form";
+import { ComponentStory, ComponentMeta, Story } from "@storybook/react";
+import { Form, IFormProps } from "./Form";
 import { testSchema } from "../../EXAMPLE_SCHEMA";
 import { MemoryRouter } from "react-router-dom";
 import "nhsuk-frontend/packages/nhsuk";
@@ -10,4 +10,12 @@ export default {
   component: Form,
 } as ComponentMeta<typeof Form>;
 
-export const NHSUK = { args: { schema: testSchema } };
+const Template: Story<IFormProps> = (args) => <Form {...args} />;
+export const NHSUK = Template.bind({});
+NHSUK.args = {
+  /**
+   * Schema docstring
+   *
+   */
+  schema: testSchema,
+};

@@ -3,20 +3,17 @@ import React, { SyntheticEvent } from "react";
 import { Component, FormChoices } from "../../../types";
 import { IDateInputOnChangeValue } from "./types";
 
-interface IDateInputOption {
-  displayText: string;
-  id: string;
-}
-
-export interface IDateInput extends Component {
-  options: IDateInputOption[];
-}
+export interface IDateInput extends Component {}
 
 export interface IDateInputProps {
+  /**
+   * Component to render
+   */
   component: IDateInput;
   formChoices: FormChoices;
   setFormChoices: React.Dispatch<React.SetStateAction<FormChoices>>;
 }
+
 const DateInput: React.FC<IDateInputProps> = ({
   component,
   formChoices,

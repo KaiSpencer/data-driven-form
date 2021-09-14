@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta, Story } from "@storybook/react";
 import DateInput, { IDateInputProps } from "./DateInput";
 
 export default {
@@ -7,4 +7,12 @@ export default {
   component: DateInput,
 } as ComponentMeta<typeof DateInput>;
 
-export const NHSUK = { args: { component: { title: "hi" } } };
+const Template: Story<IDateInputProps> = (args) => <DateInput {...args} />;
+export const NHSUK = Template.bind({});
+
+NHSUK.args = {
+  component: {
+    id: "id",
+    type: "DateInput",
+  },
+};
