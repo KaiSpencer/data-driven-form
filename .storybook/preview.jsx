@@ -1,7 +1,6 @@
 import { addDecorator } from '@storybook/react'
 import React from 'react'
 import './main.scss'
-
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

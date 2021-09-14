@@ -22,7 +22,7 @@ Yarn
 
 Runs at `localhost:3000`
 
-`yarn dev`
+`yarn start`
 
 # Usage
 
